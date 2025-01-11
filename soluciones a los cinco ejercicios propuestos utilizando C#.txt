@@ -1,0 +1,112 @@
+Ejercicio 1
+Descripción: Almacenar las asignaturas de un curso en una lista y mostrarlas por pantalla.
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> asignaturas = new List<string> { "Matemáticas", "Física", "Química", "Historia", "Lengua" };
+        
+        Console.WriteLine("Asignaturas del curso:");
+        foreach (var asignatura in asignaturas)
+        {
+            Console.WriteLine(asignatura);
+        }
+    }
+}
+
+Ejercicio 2
+Descripción: Mostrar un mensaje para cada asignatura.
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> asignaturas = new List<string> { "Matemáticas", "Física", "Química", "Historia", "Lengua" };
+        
+        foreach (var asignatura in asignaturas)
+        {
+            Console.WriteLine($"Yo estudio {asignatura}");
+        }
+    }
+}
+
+Ejercicio 3
+Descripción: Preguntar al usuario la nota de cada asignatura y mostrarla.
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> asignaturas = new List<string> { "Matemáticas", "Física", "Química", "Historia", "Lengua" };
+        Dictionary<string, float> notas = new Dictionary<string, float>();
+
+        foreach (var asignatura in asignaturas)
+        {
+            Console.Write($"Introduce la nota de {asignatura}: ");
+            float nota = float.Parse(Console.ReadLine());
+            notas[asignatura] = nota;
+        }
+
+        foreach (var asignatura in asignaturas)
+        {
+            Console.WriteLine($"En {asignatura} has sacado {notas[asignatura]}");
+        }
+    }
+}
+
+Ejercicio 4
+Descripción: Preguntar al usuario los números ganadores de la lotería y mostrarlos ordenados.
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numerosGanadores = new List<int>();
+        Console.WriteLine("Introduce los números ganadores de la lotería (escribe -1 para terminar):");
+
+        while (true)
+        {
+            int numero = int.Parse(Console.ReadLine());
+            if (numero == -1) break;
+            numerosGanadores.Add(numero);
+        }
+
+        numerosGanadores.Sort();
+        Console.WriteLine("Números ganadores ordenados:");
+        foreach (var numero in numerosGanadores)
+        {
+            Console.WriteLine(numero);
+        }
+    }
+}
+
+Ejercicio 5
+Descripción: Almacenar los números del 1 al 10 en una lista y mostrarlos en orden inverso.
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numeros = new List<int>();
+
+        for (int i = 1; i <= 10; i++)
+        {
+            numeros.Add(i);
+        }
+
+        numeros.Reverse();
+        Console.WriteLine("Números del 1 al 10 en orden inverso:");
+        Console.WriteLine(string.Join(", ", numeros));
+    }
+}
